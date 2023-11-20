@@ -11,7 +11,6 @@ import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:stream_channel/stream_channel.dart';
 import 'package:uuid/uuid.dart';
-import 'package:uuid/uuid_util.dart';
 import 'package:web_socket_channel/status.dart' as ws_status;
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -26,7 +25,7 @@ typedef WebSocketConnect = FutureOr<WebSocketChannel> Function(
 );
 
 // create uuid generator
-final _uuid = Uuid(options: {'grng': UuidUtil.cryptoRNG});
+final _uuid = Uuid();
 
 class SubscriptionListener {
   Function callback;
